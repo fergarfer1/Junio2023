@@ -21,7 +21,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/fergarfer1/personal/")
+            url = uri("https://maven.pkg.github.com/fergarfer1/Junio2023/")
             credentials {
             //las propiedades gpr.user y gpr.key est�n configuradas en gradle.properties en el raiz del proyecto, y se a�ade a .gitignore para que no se suban
             	username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
