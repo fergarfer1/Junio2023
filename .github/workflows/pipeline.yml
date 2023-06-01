@@ -3,6 +3,8 @@ on:
   workflow_dispatch:
   push:
     branches: [ arreglosCole ]
+  pull_request:
+    branches: [ arreglosCole ]
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -36,4 +38,25 @@ jobs:
           chmod +x gradlew        
           ./gradlew test
       - name: mi UVUS
+        run: echo "fergarfer1"
+    
+  Publish:
+    needs: [Build, Test]
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_USERNAME: ${{ github.actor }}
+      GITHUB_TOKEN: ${{ secrets.MY_SECRET}}
+    steps:
+      - name: Clonando el repositorio y estableciendo el espacio de trabajo
+        uses: actions/checkout@v3
+      - name: Configurando java
+        uses: actions/setup-java@v3
+        with:
+         distribution: 'temurin'
+         java-version: '16'
+      - name: Publicando
+        run: |
+          chmod +x gradlew 
+          ./gradlew publish
+      - name: UVUS_personap
         run: echo "fergarfer1"
