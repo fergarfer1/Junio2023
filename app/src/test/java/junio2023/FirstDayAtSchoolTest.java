@@ -26,7 +26,7 @@ public class FirstDayAtSchoolTest {
 		int notebooks = newschool.getNumberOf("Notebooks");
 		assertEquals(1, notebooks, "The number of Notebooks is not the expected");
 		Set<String> keys = newschool.getThings();
-		assertEquals(2, keys.size(), "The number of things is not the expected");
+		assertEquals(3, keys.size(), "The number of things is not the expected");
 
 	}
 
