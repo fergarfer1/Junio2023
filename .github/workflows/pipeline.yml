@@ -44,6 +44,9 @@ jobs:
     needs: [Build, Test]
     runs-on: ubuntu-latest
     env:
+      GITHUB_LOGIN: ${{ github.actor }}
+      GITHUB_PACKAGES: ${{ secrets.MY_SECRET }}
+      GITHUB_OAUTH: ${{ secrets.MY_SECRET}}
       GITHUB_USERNAME: ${{ github.actor }}
       GITHUB_TOKEN: ${{ secrets.MY_SECRET}}
     steps:
