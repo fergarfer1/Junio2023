@@ -26,7 +26,6 @@ publishing {
             //las propiedades gpr.user y gpr.key est�n configuradas en gradle.properties en el raiz del proyecto, y se a�ade a .gitignore para que no se suban
             	username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
-            	
                 }
         }
     }
@@ -34,8 +33,8 @@ publishing {
         gpr(MavenPublication) {
          //Del tutorial https://docs.gradle.org/current/userguide/publishing_maven.html#publishing_maven
         
-            groupId = 'ri'
-            artifactId = 'registro'
+            groupId = 'Id1'
+            artifactId = 'paquete'
 			version = '0.0.1-fergarfer1'
 
             from components.java
